@@ -26,3 +26,36 @@ health2 = health1
 
 day_date_time = Time.new.strftime("The game started on %A %D at %I:%M%p")
 puts "#{day_date_time}"
+
+##############
+
+def current_time
+  time = Time.new
+  time.strftime("%T")
+end
+
+def say_hello(name, health=100)
+ puts  "I'm #{name.capitalize} with a health of #{health} as of #{current_time}"
+end
+
+say_hello("larry", 60)
+say_hello("curly", 125)
+say_hello("moe")
+say_hello("shemp", 90)
+
+################
+project1="ABC"
+project2="LMN"
+project3="XYZ"
+project1_funding = 1000
+project2_funding = 1500
+project3_funding = 2000
+
+
+puts "Project #{project1} has $#{project1_funding} in funding."
+puts "Project #{project2} has $#{project2_funding} in funding."
+puts "Project #{project3} has $#{project3_funding} in funding."
+puts "\n"
+
+puts "Projects:\n\tProject #{project1}\n\tProject #{project2}\n\tProject #{project3}"
+
