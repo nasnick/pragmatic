@@ -59,3 +59,21 @@ puts "\n"
 
 puts "Projects:\n\tProject #{project1}\n\tProject #{project2}\n\tProject #{project3}"
 
+################
+
+# # puts player2.name = "lawrence"
+# # puts player2
+#
+#
+# players = [player1, player2, player3]
+#
+# # puts "There are #{players.size} players in the game."
+# players.pop(1)
+# players.push(player4)
+#
+# players.each do |player|
+#   player.w00t
+#   player.blam
+#   player.w00t
+#   puts player
+# end
