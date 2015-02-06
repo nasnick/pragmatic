@@ -1,3 +1,4 @@
+require_relative 'player'
 class Game
   attr_reader :title
   

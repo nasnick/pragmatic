@@ -1,6 +1,7 @@
 class Player
   attr_reader :health
   attr_accessor :name
+  
   def initialize(name, health=100)
     @name = name.capitalize
     @health = health
@@ -27,4 +28,9 @@ class Player
     @health += 15
     puts "#{@name} got w00ted!"
   end
+end
+
+if __FILE__ == $0
+  player1 = Player.new("moe")
+  puts player1.name
 end
