@@ -28,7 +28,7 @@ class Player
     puts "#{@name} got w00ted!"
   end
 end
-#
+
 
 
 class Game
@@ -66,7 +66,3 @@ knuckleheads.add_player(player1)
 knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
 knuckleheads.play
-puts ""
-RogerMoroney = Game.new("Roger")
-RogerMoroney.add_player(player1)
-RogerMoroney.play
