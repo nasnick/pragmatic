@@ -15,8 +15,10 @@ class ProcessProjects
     puts "\n"
     
     @projects.each do |project|
-      project.add(45)
-      project.sub(100)
+      #project.add(45)
+      #project.sub(100)
+      project.add
+      project.sub
       puts "\n"
       #a call to project_worthiness to eliminate charities that have dropped below 250
       @projects = project_worthiness( project )
