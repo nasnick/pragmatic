@@ -33,4 +33,24 @@ describe Player do
     @player.blam
     @player.health.should == @initial_health - 10
   end
+  
+  context "create a player with a default value of 150" do 
+    before do
+      @initial_health = 150
+      @player = Player.new("lozzy", @initial_health)
+    end
+    it "should be strong" do
+      @player.should be_strong
+    end
+    
+    context "create a player with a default value of 100" do
+      before do
+      @initial_health = 100
+      @player = Player.new("haydo", @initial_health)
+    end
+    it "should be wimpy" do
+      @player.should_not be_strong
+    end
+  end
+end
 end

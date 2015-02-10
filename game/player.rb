@@ -7,12 +7,21 @@ class Player
     @health = health
   end
 
-  def name=(new_name)
-    @name = new_name.capitalize
-  end
-
   def to_s
     "I'm #{@name} with a health of #{@health} amd a score of #{score}"
+  end
+  
+  def strong?
+    health >= 150 ? true : false
+  #   if @health >= 150
+  #     true
+  #   elsif @health < 100
+  #     false
+  # end
+end
+  
+  def name=(new_name)
+    @name = new_name.capitalize
   end
 
     def score

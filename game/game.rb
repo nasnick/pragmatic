@@ -1,3 +1,4 @@
+require_relative 'Die'
 require_relative 'player'
 
 class Game
