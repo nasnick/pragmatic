@@ -14,10 +14,13 @@ class Game
     puts @players
     
     @players.each do |player|
-      player.w00t
-      player.blam
-      player.blam
-      puts player
+      die = Die.new
+      new_roll = die.roll
+      if new_roll < 5
+        puts "#{player} stays the same"
+      else
+        player.w00t
+      end
     end
   end
   

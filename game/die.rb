@@ -2,11 +2,7 @@ require_relative 'game'
 
 class Die
   
-  def initialize(title)
-    @title = title
-    @players = []
-  end
-  
   def roll
+    rand(1..6)
   end
 end
