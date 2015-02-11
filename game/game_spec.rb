@@ -20,4 +20,9 @@ describe Game do
     @game.play
     @player.health.should == @initial_health
   end
+  it "health should decrease by 10 if 1..2 rolled" do
+    Die.any_instance.stub(:roll).and_return(1)
+    @game.play
+    @player.health.should == @initial_health - 10
+  end
 end
