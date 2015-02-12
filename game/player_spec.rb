@@ -54,3 +54,13 @@ describe Player do
   end
 end
 end
+
+
+# Notes:
+# In the following, got == what the class returned, expected == what the test was expecting.
+# So if - 10 is commented out then throws the following error:
+# expected: 150
+#      got: 140 (using ==)
+     
+
+

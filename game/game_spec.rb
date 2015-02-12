@@ -12,7 +12,7 @@ describe Game do
 
   end 
   it "should w00t a player if a high number is rolled" do
-    #Die.any_instance.stub(:roll).and_return(5)
+    Die.any_instance.stub(:roll).and_return(5)
     @game.play
     @player.health.should == @initial_health  + 15
   end

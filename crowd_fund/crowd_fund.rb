@@ -15,6 +15,8 @@ projects.add_projects(charity2)
 projects.add_projects(charity3)
 projects.request_funding
 projects.request_funding
+projects.request_funding
+projects.request_funding
 
 #Will use the values after 'projects' has finished with objecte
 # display = ProcessProjects.new("display")

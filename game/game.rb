@@ -17,7 +17,7 @@ class Game
     @players.each do |player|
       die = Die.new
       number_rolled = die.roll
-      
+    
       case number_rolled
       when 1..2
         player.blam
