@@ -23,14 +23,14 @@ class Project
 
   def add(second_number)
     @initial_amount += second_number
-    puts "Project #{@name} has gained #{second_number}"
+    puts "Project #{@name} has gained #{second_number}!"
+    puts "Project #{@name} needs a further $#{outstanding} to reach their goal of $#{@goal}"
   end
 
 
   def sub(second_number)
     @initial_amount -= second_number
     puts "Project #{@name} has lost #{second_number}!"
-    #@initial_amount -= 15
     puts "Project #{@name} needs a further $#{outstanding} to reach their goal of $#{@goal}"
  end  
 end

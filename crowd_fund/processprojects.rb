@@ -1,6 +1,5 @@
 require_relative 'project'
 require_relative 'die'
-require_relative 'processprojects'
 
 class ProcessProjects
   attr_reader :title
@@ -13,11 +12,11 @@ class ProcessProjects
   
   def fully_funded
     @projects.each do |project|
-       case project.initial_amount >= 1000 ? false : true
+       case project.initial_amount >= 1000 ? true : false
       when true
         puts "******* Project #{project.name} has reached its funding amount.********"
       else
-        puts "Project #{project.name} still needs $#{1000 - project.initial_amount}"
+        puts "Project #{project.name} still needs $#{1000 - project.initial_amount} towards its goal of #{project.initial_amount}"
       end
     end
   end  

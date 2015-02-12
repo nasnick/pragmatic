@@ -1,6 +1,5 @@
 require_relative 'project'
 require_relative 'die'
-require_relative 'processprojects'
 
 describe Project do
   before do
