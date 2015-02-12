@@ -15,14 +15,14 @@ class Game
     
     @players.each do |player|
       die = Die.new
-      new_roll = die.roll
+      number_rolled = die.roll
       if new_roll >= 5
         player.w00t
       elsif new_roll <= 2
         player.blam
       else
         puts "#{player} stays the same"
-      end
+        end
     end
   end
   
