@@ -1,4 +1,4 @@
-require_relative 'Die'
+require_relative 'game_turn'
 require_relative 'player'
 
 class Game
@@ -15,19 +15,7 @@ class Game
     puts "\n"
     
     @players.each do |player|
-      die = Die.new
-      number_rolled = die.roll
-    
-      case number_rolled
-      when 1..2
-        player.blam
-      when 5..6
-        player.w00t
-      else
-       puts "#{player.name} was skipped" 
-      end
-      puts "#{player.name} now has a health of #{player.health} and a score of #{player.score}"
-      puts "\n"
+      GameTurn.take_turn(player)
     end
   end
   
