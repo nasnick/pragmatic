@@ -30,4 +30,4 @@ describe Game do
     @player.health.should == @initial_health
   end
 end
-
+hi there
