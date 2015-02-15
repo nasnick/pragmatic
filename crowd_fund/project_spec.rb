@@ -18,16 +18,19 @@ describe Project do
       @project.outstanding.should == @goal - @initial
     end
 
-    it "increases funds by 40 when funds are added" do
-      Die.any_instance.stub(:roll).and_return(2)
-      @project.add(40)
-      @project.initial_amount.should == @initial + 40
+    it "increases funds by 240 when funds are added" do
+      #Die.any_instance.stub(:roll).and_return(2)
+      FundingRound.stub(:die_rolled).and_return(2)
+      #makes a call to the add method in project.rb file and if this is changed it returns error
+      @project.add(240)
+      @project.initial_amount.should == @initial + 240
     end
     
-    it "decreases funds by 30 when funds are removed" do
-      Die.any_instance.stub(:roll).and_return(1)
-      @project.sub(30)
-      @project.initial_amount.should == @initial - 30
+    it "decreases funds by 130 when funds are removed" do
+      #Die.any_instance.stub(:roll).and_return(1)
+      FundingRound.stub(:die_rolled).and_return(1)
+      @project.sub(130)
+      @project.initial_amount.should == @initial - 130
     end
 
     it "has a default value of 0 for funding amount" do

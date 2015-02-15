@@ -7,17 +7,26 @@ charity4 = Project.new("PQR", 320, 1000)
 
 projects = ProcessProjects.new("VC-Friendly Start-up Projects")
 a = "*" * projects.title.length
-puts a
+puts a 
 puts projects.title
 puts a
 projects.add_projects(charity1)
 projects.add_projects(charity2)
 projects.add_projects(charity3)
 projects.request_funding
+puts a 
+puts projects.title
+puts a
 projects.request_funding
+puts a 
+puts projects.title
+puts a
 projects.request_funding
+puts a 
+puts projects.title
+puts a
 projects.request_funding
-
+ 
 #Will use the values after 'projects' has finished with objecte
 # display = ProcessProjects.new("display")
 # puts display.title
