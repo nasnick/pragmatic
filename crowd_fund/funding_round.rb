@@ -24,7 +24,7 @@ def self.project_funding( project )
      when true
        puts "******* Project #{project.name} has reached its funding amount.********"
      else
-       puts "Project #{project.name} still needs $#{1000 - project.initial_amount} towards its goal of #{project.initial_amount}"
+       puts "Project #{project.name} still needs $#{project.outstanding} towards its goal of #{project.initial_amount}"
      end
    end
 end
