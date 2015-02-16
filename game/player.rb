@@ -7,6 +7,10 @@ class Player
     @health = health
   end
 
+  def <=>(other_player)
+    other_player.health <=> @health
+  end
+  
   def to_s
     "I'm #{@name} with a health of #{@health} amd a score of #{score}"
   end
