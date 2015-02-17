@@ -45,5 +45,3 @@ class Game
     @players << a_player
   end
 end
-
-hello little cutie Tanny
