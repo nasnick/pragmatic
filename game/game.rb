@@ -22,7 +22,7 @@ class Game
       end
       puts @players.sort.reverse
       puts "\n"
-      print_stats
+      #print_stats
    end
  end
  
@@ -33,15 +33,23 @@ class Game
    puts "#{strong.size} strong players:"
    strong.each do |player|
      puts "#{player.name} (#{player.health})"
-  end
-  puts "\n"
- puts "#{wimpy.size} strong players:"
- wimpy.each do |player|
-   puts "#{player.name} (#{player.health})"
-  end
- end   
+   end
+   puts "\n"
+   puts "#{wimpy.size} strong players:"
+   wimpy.each do |player|
+     puts "#{player.name} (#{player.health})"
+   end
+   puts "\n"
+   sorted_players = @players.sort {|a,b| a <=> b }
+   puts "#{@title} High Scores:"
+   sorted_players.each do |player|
+     #dot = "." * (15 - player.name.length)
+     formated_name = player.name.ljust(20, '.')
+     puts "#{formated_name} #{player.score}"
+     end
+   end   
   
-  def add_player( a_player )
+ def add_player( a_player )
     @players << a_player
   end
 end
