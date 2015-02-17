@@ -21,7 +21,7 @@ describe Project do
     it "increases funds by 240 when funds are added" do
       #Die.any_instance.stub(:roll).and_return(2)
       FundingRound.stub(:die_rolled).and_return(2)
-      #makes a call to the add method in project.rb file and if this is changed it returns error
+      #makes a call to the add method in project.rb file and if this is changed it returns error. This does not check the amount        of money being added in FundingRound.
       @project.add(240)
       @project.initial_amount.should == @initial + 240
     end

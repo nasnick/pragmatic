@@ -13,7 +13,7 @@ knuckleheads = Game.new("Knuckleheads")
 knuckleheads.add_player(player1)
 knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
-knuckleheads.play(16)
+knuckleheads.play(5)
 
 # players = [player1, player2, player3]
 # puts players.sort_by {|a| a.health}
