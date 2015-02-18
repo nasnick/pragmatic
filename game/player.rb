@@ -8,11 +8,13 @@ class Player
   end
 
   def <=>(other_player)
-    other_player.health <=> @health
+     #puts "here's #{other_player.name}'s #{other_player.score}"
+     #puts score
+    other_player.score <=> score
   end
   
   def to_s
-    "I'm #{@name} with a health of #{@health} amd a score of #{score}"
+    "I'm #{@name} with a health of #{@health} and a score of #{score}"
   end
   
   def strong?

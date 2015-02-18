@@ -8,6 +8,10 @@ class Project
     @goal = goal
     @second_number = second_number
   end
+  
+  def <=>(other_project)
+    other_project.initial_amount <=> initial_amount
+  end
 
   def to_s
       "Project #{@name} has $#{@initial_amount} in funding towards a goal of $#{@goal}"

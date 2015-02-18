@@ -20,32 +20,37 @@ class Game
         puts "#{player.name}'s score in round #{round + 1}"
         GameTurn.take_turn(player)
       end
-      puts @players.sort.reverse
+      #puts @players.sort.reverse
       puts "\n"
       #print_stats
    end
  end
  
- def print_stats
+ def print_name_and_health(player)
+   puts "#{player.name} (#{player.health}) "
+ end
+ 
+  def print_stats
    strong, wimpy = @players.partition { |strong| strong.strong? }
    
    puts "\n#{@title} Statistics:"
    puts "#{strong.size} strong players:"
+  
    strong.each do |player|
-     puts "#{player.name} (#{player.health})"
+     print_name_and_health(player)
    end
-   puts "\n"
-   puts "#{wimpy.size} strong players:"
+   puts "\n#{wimpy.size} wimpy players:"
+   
    wimpy.each do |player|
-     puts "#{player.name} (#{player.health})"
+     print_name_and_health(player)
    end
    puts "\n"
-   sorted_players = @players.sort {|a,b| a <=> b }
+   #sorted_players = @players.sort {|a,b| a <=> b }
    puts "#{@title} High Scores:"
-   sorted_players.each do |player|
+   #sorted_players.each do |player|
+   @players.sort.each do |player|
      #dot = "." * (15 - player.name.length)
-     formated_name = player.name.ljust(20, '.')
-     puts "#{formated_name} #{player.score}"
+     puts "#{player.name.ljust(20, '.')} #{player.score}"
      end
    end   
   
