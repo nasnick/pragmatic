@@ -1,0 +1,1 @@
+Treasure = struct.new(:hammer,:points)
