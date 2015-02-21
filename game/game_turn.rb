@@ -1,15 +1,16 @@
 #require_relative 'player'
 require_relative 'die'
+require_relative 'game'
 
 module GameTurn
-  
+
   def self.number_rolled
     die = Die.new
     number_rolled = die.roll
   end
   
   def self.take_turn( player )
-  
+    round = 1
     case number_rolled
     when 1..2
       player.blam
@@ -22,3 +23,4 @@ module GameTurn
     puts "\n"
   end
 end
+

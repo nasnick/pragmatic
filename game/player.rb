@@ -18,7 +18,7 @@ class Player
   end
   
   def strong?
-    health >= 150 ? true : false
+    health >= 135 ? true : false
   #   if @health >= 150
   #     true
   #   elsif @health < 100

@@ -14,6 +14,15 @@ describe Treasure do
     @treasure.points.should == 50
   end
   
+  it "returns a random treasure" do
+    treasure = TreasureTrove.random
+
+    TreasureTrove::TREASURES.should include(treasure)
+  
+    # or use alternate expectation syntax:
+    # expect(TreasureTrove::TREASURES).to include(treasure)
+  end
+  
 end
 
 describe TreasureTrove do
