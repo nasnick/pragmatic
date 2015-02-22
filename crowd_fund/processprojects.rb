@@ -1,6 +1,5 @@
 require_relative 'project'
 require_relative 'funding_round'
-require_relative 'processprojects'
 
 class ProcessProjects
   attr_reader :title, :projects
@@ -15,6 +14,15 @@ class ProcessProjects
     puts "There are #{@projects.size} projects:"
     puts @projects
     puts "\n"
+    
+    pledges = PledgePool::PLEDGES
+    puts "There are #{pledges.size} possible pledge amounts:"
+    pledges.each do |pledge|
+      puts "A #{pledge.level} pledge is worth $#{pledge.funds}"
+    end
+    puts "\n"
+    
+    #pledges.each do
     (rounds).times do
       @projects.each do |project|      
         FundingRound.project_funding( project )

@@ -13,7 +13,7 @@ puts a
 projects.add_projects(charity1)
 projects.add_projects(charity2)
 projects.add_projects(charity3)
-projects.request_funding(7)
+projects.request_funding(1)
 
  
 #Will use the values after 'projects' has finished with objecte

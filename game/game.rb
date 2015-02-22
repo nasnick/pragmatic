@@ -1,6 +1,5 @@
-require_relative 'game_turn'
 require_relative 'player'
-require_relative "treasure_trove"
+require_relative 'game_turn'
 
 #Game class inherits from player class.
 
@@ -10,11 +9,9 @@ class Game
   def initialize(title)
     @title = title
     @players = []
-    @rounds = 1
   end 
   
   def play(rounds)
-    round = 0
     puts "There are #{@players.size} players in #{@title}:"
     @players.each do |player|
       puts player
@@ -34,21 +31,23 @@ class Game
 
      puts "\n"
      
-    (rounds).times do |round|
+    1.upto(rounds) do |round|
+      puts "Round #{round}:"
       @players.each do |player|
-        treasure = TreasureTrove.random
-        puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points\n"
+        # treasure = TreasureTrove.random
+        # puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points\n"
+        
         #if I add 'player.name = "rogeyboy"'here it shows that it's possible to change the value of an instance variables (@name)          via the symbol :name in the player class via attr_accessor but if this is defined in attr_reader an error is thrown.
         
         #This takes 'player and then passes it to the module method 'take_turn' so these block (what are they called) can be               passed around to different classes and modules.
+        
         GameTurn.take_turn(player)
-        puts "#{player.name}'s round #{rounds} action:"
+        
       end
       #@rounds += 1
       #puts @players.sort.reverse
       puts "\n"
       #print_stats << a call to print_stats here works but is now defined in studio_game
-   rounds += 1
    end
    
  end

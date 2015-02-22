@@ -28,6 +28,9 @@ class Project
   def add(second_number)
     @initial_amount += second_number
     puts "Project #{@name} has gained #{second_number}!"
+    pledge = PledgePool.random
+    @initial_amount += pledge.funds
+    puts "Project #{@name} has received a #{pledge.level} worth $#{pledge.funds}"
     puts "Project #{@name} needs a further $#{outstanding} to reach their goal of $#{@goal}"
   end
 
@@ -35,6 +38,9 @@ class Project
   def sub(second_number)
     @initial_amount -= second_number
     puts "Project #{@name} has lost #{second_number}!"
+    pledge = PledgePool.random
+    @initial_amount += pledge.funds
+    puts "Project #{@name} has received a #{pledge.level} worth $#{pledge.funds}"
     puts "Project #{@name} needs a further $#{outstanding} to reach their goal of $#{@goal}"
  end  
 end

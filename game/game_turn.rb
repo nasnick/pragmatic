@@ -1,6 +1,5 @@
-#require_relative 'player'
 require_relative 'die'
-require_relative 'game'
+require_relative 'treasure_trove'
 
 module GameTurn
 
@@ -20,6 +19,8 @@ module GameTurn
      puts "#{player.name} was skipped" 
     end
     puts "#{player.name} now has a health of #{player.health} and a score of #{player.score}"
+    treasure = TreasureTrove.random
+    puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points"
     puts "\n"
   end
 end
