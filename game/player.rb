@@ -3,6 +3,7 @@ class Player
   attr_accessor :name
   
   def initialize(name, health=100)
+    #Values for instance variables are unique for each object.
     @name = name.capitalize
     @health = health
   end
