@@ -21,6 +21,7 @@ module GameTurn
     puts "#{player.name} now has a health of #{player.health} and a score of #{player.score}"
     treasure = TreasureTrove.random
     puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points"
+    #puts "#{player.name}'s Treasures: #{player.get_treasure}" << before parameter added
     puts "\n"
   end
 end
