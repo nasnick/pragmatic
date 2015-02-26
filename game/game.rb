@@ -42,6 +42,7 @@ class Game
         #This takes 'player and then passes it to the module method 'take_turn' so these block (what are they called) can be               passed around to different classes and modules.
         
         GameTurn.take_turn(player)
+        GameTurn.assign_treasure(player)
         
       end
       #@rounds += 1
@@ -53,7 +54,7 @@ class Game
  end
  
  def print_name_and_health(player)
-   puts "#{player.name} (#{player.health}) "
+   puts "#{player.name} (#{player.score}) "
  end
  
   def print_stats
@@ -77,6 +78,10 @@ class Game
    @players.sort.each do |player|
      #dot = "." * (15 - player.name.length)
      puts "#{player.name.ljust(20, '.')} #{player.score}"
+     end
+     @players.each do |player|
+       puts "\n#{player.name}'s points total:"
+       puts "#{player.points} grand total points"
      end
    end   
   

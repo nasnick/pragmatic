@@ -12,45 +12,47 @@ class Player
   end
   
   def to_s
-    "I'm #{@name} with a health of #{@health} and a score of #{score}"
+    #Get to the bottom of this method.
+    "I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
   end
   
   def <=>(other_player)
      #puts "here's #{other_player.name}'s #{other_player.score}"
      #puts score
+     #How does this work again? Comparing each in the array and returning an ordered array based on 'score' so like a custom           array sorter
     other_player.score <=> score
   end
   
   def found_treasure(treasure)
     #new_treasure = TreasureTrove.random << had this here before there was a parameter added and it worked.
     @found_treasure[treasure.name] += treasure.points
-    puts "#{@player} found a #{treasure.name} worth #{treasure.points} points"
-    puts @found_treasure
+    #puts "#{@player} found a #{treasure.name} worth #{treasure.points} points"
+    #puts @found_treasure
     #@found_treasures.values.reduce(0,:+)
-    #puts "#{@name}'s Treasures: @found_treasures"
+    puts "#{@name}'s Treasures: #{@found_treasure}"
   end
-  
-  def points
-    #what does the '0' do here?
-    @found_treasure.values.reduce(0,:+)
-  end
-  
   
   def strong?
-    health >= 135 ? true : false
+    (health + points) >= 500 ? true : false
   #   if @health >= 150
   #     true
   #   elsif @health < 100
   #     false
   # end
-end
+  end
   
   def name=(new_name)
     @name = new_name.capitalize
   end
 
+  def points
+    #what does the '0' do here?
+    @found_treasure.values.reduce(0,:+)
+  end
+  
     def score
-      @health + @name.length
+      #@health + @name.length + points
+      @health + points
   end
 
   def blam
@@ -68,3 +70,5 @@ if __FILE__ == $0
   player1 = Player.new("moe")
   puts player1.name
 end
+
+#calling the points method on the player object within the player class?

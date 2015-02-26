@@ -8,7 +8,18 @@ module GameTurn
     number_rolled = die.roll
   end
   
+  def self.assign_treasure( player )
+    #Assign a treasure to a player object
+    treasure = TreasureTrove.random
+    player.found_treasure( treasure )
+    puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points"
+    #puts "#{player.name} has #{player.points + player.score} points"
+    puts player
+    puts "\n"
+  end
+  
   def self.take_turn( player )
+    #W00t or blam a player
     round = 1
     case number_rolled
     when 1..2
@@ -18,11 +29,7 @@ module GameTurn
     else
      puts "#{player.name} was skipped" 
     end
-    puts "#{player.name} now has a health of #{player.health} and a score of #{player.score}"
-    treasure = TreasureTrove.random
-    puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points"
-    #puts "#{player.name}'s Treasures: #{player.get_treasure}" << before parameter added
-    puts "\n"
+    #puts "#{player.name} now has a health of #{player.health} and a score of #{player.score}"
   end
 end
 
