@@ -1,7 +1,7 @@
 require_relative 'treasure_trove'
 
 class Player
-  attr_reader :health
+  attr_reader :health, :found_treasure
   attr_accessor :name
   
   def initialize(name, health=100)
@@ -44,7 +44,7 @@ class Player
   def name=(new_name)
     @name = new_name.capitalize
   end
-
+  
   def points
     #what does the '0' do here?
     @found_treasure.values.reduce(0,:+)

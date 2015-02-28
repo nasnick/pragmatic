@@ -50,8 +50,13 @@ class Game
       puts "\n"
       #print_stats << a call to print_stats here works but is now defined in studio_game
    end
-   
  end
+ 
+   def total_points
+     #@players.each do |player|
+     @players.reduce(0) {|sum, player| sum += player.points}
+      #end
+   end
  
  def print_name_and_health(player)
    puts "#{player.name} (#{player.score}) "
@@ -60,7 +65,7 @@ class Game
   def print_stats
    strong, wimpy = @players.partition { |strong| strong.strong? }
    
-   puts "#{@title} Statistics:"
+   puts "#{@title} Statistics:"  
    puts "#{strong.size} strong players:"
   
    strong.sort.each do |player|
@@ -79,13 +84,16 @@ class Game
      #dot = "." * (15 - player.name.length)
      puts "#{player.name.ljust(20, '.')} #{player.score}"
      end
+     
      @players.each do |player|
        puts "\n#{player.name}'s points total:"
        puts "#{player.points} grand total points"
      end
-   end   
+     
+     puts "\n#{total_points} total treasure points found during the game." 
+  end
   
  def add_player( a_player )
     @players << a_player
   end
-end
+ end
