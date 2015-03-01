@@ -24,3 +24,8 @@ knuckleheads.print_stats
 # Treasure.new(:skillet, 100),
 # Treasure.new(:broomstick, 200),
 # Treasure.new(:crowbar, 400)
+
+# players = [player1, player2, player3]
+# puts players.sort_by {|a| a.health}
+# puts "\n"
+# puts players.sort.reverse

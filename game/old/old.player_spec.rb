@@ -16,6 +16,9 @@ describe Player do
     @player.health.should == 150
   end
   
+  # it "has a string representation" do
+#     @player.to_s.should == "I'm Rogey with a health of 150 and a score of 155"
+#   end
   it "has a string representation" do  
     @player.found_treasure(Treasure.new(:hammer, 50))
     @player.found_treasure(Treasure.new(:hammer, 50))

@@ -26,11 +26,19 @@ class Player
   def found_treasure(treasure)
     #new_treasure = TreasureTrove.random << had this here before there was a parameter added and it worked.
     @found_treasure[treasure.name] += treasure.points
+    #puts "#{@player} found a #{treasure.name} worth #{treasure.points} points"
+    #puts @found_treasure
+    #@found_treasures.values.reduce(0,:+)
     puts "#{@name}'s Treasures: #{@found_treasure}"
   end
   
   def strong?
     (health + points) >= 500 ? true : false
+  #   if @health >= 150
+  #     true
+  #   elsif @health < 100
+  #     false
+  # end
   end
   
   def name=(new_name)
@@ -43,6 +51,7 @@ class Player
   end
   
     def score
+      #@health + @name.length + points
       @health + points
   end
 
