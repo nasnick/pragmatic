@@ -9,8 +9,11 @@ module GameTurn
   end
   
   def self.assign_treasure( player )
-    #Assign a treasure to a player object
+    # Call made to this in play method of the game class (GameTurn.assign_treasure(player)). 
+    #Player object comes from block iterating through player array.
+    #This assigns a treasure from TreasureTrove class.
     treasure = TreasureTrove.random
+    #found_treasure adds the treasure to the hash.
     player.found_treasure( treasure )
     puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points"
     puts player
@@ -31,3 +34,4 @@ module GameTurn
   end
 end
 
+#play method (Game class) => (assign_treasure method (game_turn module) <= treasure_trove) =>  found_treasure (player class) => called in print_stats method (Game class)

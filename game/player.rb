@@ -1,7 +1,5 @@
-require_relative 'treasure_trove'
-
 class Player
-  attr_reader :health, :found_treasure
+  attr_reader :health
   attr_accessor :name
   
   def initialize(name, health=100)
@@ -42,8 +40,10 @@ class Player
     @found_treasure.values.reduce(0,:+)
   end
   
-  def each_treasure
+  def each_found_treasure
+    #Accesses the keys and values of the @found_treasure hash.
     @found_treasure.each do |name, points|
+      #Creates a new struct contructed from the keys/ values passed from found_treasure. More notes below.
       treasure = Treasure.new(name, points)
       yield treasure
     end
@@ -61,6 +61,8 @@ class Player
   def w00t
     @health += 15
     puts "#{@name} got w00ted!"
+    treasure = Treasure.new(name, points)
+    puts treasure
   end
 end
 
@@ -70,3 +72,7 @@ if __FILE__ == $0
 end
 
 #calling the points method on the player object within the player class?
+
+#treasure = Treasure.new(name, points) can be called in this class but if put in w00t this is the result:
+#<struct Treasure name="Larry", points=480>
+#How is Treasure accessible in this class?
