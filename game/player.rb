@@ -1,3 +1,5 @@
+require_relative 'treasure_trove'
+
 class Player
   attr_reader :health
   attr_accessor :name

@@ -1,5 +1,5 @@
 require_relative 'die'
-require_relative 'treasure_trove'
+
 
 module GameTurn
 

@@ -93,6 +93,7 @@ context "in a collection of players" do
     @player.points.should == 500
   end
   it "yields each found treasure and its total points" do
+    #add the objects to the hash
     @player.found_treasure(Treasure.new(:skillet, 100))
     @player.found_treasure(Treasure.new(:skillet, 100))
     @player.found_treasure(Treasure.new(:hammer, 50))
@@ -103,6 +104,7 @@ context "in a collection of players" do
     @player.found_treasure(Treasure.new(:bottle, 5))
   
     yielded = []
+    #create an array of structs
     @player.each_found_treasure do |treasure|
       yielded << treasure
     end

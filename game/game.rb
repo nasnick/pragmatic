@@ -13,6 +13,7 @@ class Game
   
   def play(rounds)
     puts "There are #{@players.size} players in #{@title}:"
+    #total_points
     @players.each do |player|
       puts player
     end
@@ -30,9 +31,13 @@ class Game
      # puts treasure
 
      puts "\n"
-     
     1.upto(rounds) do |round|
       puts "Round #{round}:"
+      if block_given?
+          puts "blllooooooooooockkkkkkkk"
+        else
+          puts "noooooooooooooooooo"
+        end
       @players.each do |player|
         #if I add 'player.name = "rogeyboy"'here it shows that it's possible to change the value of an instance variables (@name)          via the symbol :name in the player class via attr_accessor but if this is defined in attr_reader an error is thrown.
         
@@ -76,9 +81,9 @@ class Game
      end
      
      @players.each do |player|
-       puts "\n#{player.name}'s points total:"
+       puts "\n#{player.name}'s point totals:"
        player.each_found_treasure  do |treasure|
-         puts "#{treasure.points} points from #{treasure.name}s"
+         puts "#{treasure.points} total #{treasure.name} points"
        end
        puts "#{player.points} grand total points"
      end
