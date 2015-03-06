@@ -39,6 +39,7 @@ class Player
   
   def points
     #what does the '0' do here?
+    #This is per player. To sum all points there is a method in the Game class.
     @found_treasure.values.reduce(0,:+)
   end
   
@@ -63,8 +64,6 @@ class Player
   def w00t
     @health += 15
     puts "#{@name} got w00ted!"
-    treasure = Treasure.new(name, points)
-    puts treasure
   end
 end
 

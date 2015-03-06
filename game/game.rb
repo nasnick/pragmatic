@@ -34,10 +34,8 @@ class Game
     1.upto(rounds) do |round|
       puts "Round #{round}:"
       if block_given?
-          puts "blllooooooooooockkkkkkkk"
-        else
-          puts "noooooooooooooooooo"
-        end
+        break if yield 
+      end
       @players.each do |player|
         #if I add 'player.name = "rogeyboy"'here it shows that it's possible to change the value of an instance variables (@name)          via the symbol :name in the player class via attr_accessor but if this is defined in attr_reader an error is thrown.
         

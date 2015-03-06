@@ -46,6 +46,10 @@ end
     #@projects.each {|p| project_worthiness(p) }
   end
   
+  def total_points_for_game
+    @projects.reduce(0) {|sum, total| sum += total.points}
+  end
+   
   def print_summary_results( project )
     puts "#{project.name} with (#{project.initial_amount})"
   end
@@ -65,7 +69,12 @@ end
     puts "\nAfter #{@increment} rounds of funding there are #{@projects.size} projects:"
     @projects.each do |project|
     FundingRound.fully_funded( project )
+    puts "Projects #{project.name}'s pledges:"
+    project.each_pledge_total do |new_pledge|
+      puts "$#{new_pledge.funds} in #{new_pledge.level} pledges"
+    end
     puts "\n"
    end
+   puts "There are #{total_points_for_game} total pledge points for this game."
   end
 end
