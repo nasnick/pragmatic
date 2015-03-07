@@ -15,14 +15,13 @@ module GameTurn
     treasure = TreasureTrove.random
     #found_treasure adds the treasure to the hash.
     player.found_treasure( treasure )
-    puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points"
+    puts "#{player.name} found a #{treasure.name} worth #{treasure.point} points"
     puts player
     puts "\n"
   end
   
   def self.take_turn( player )
     #W00t or blam a player
-    round = 1
     case number_rolled
     when 1..2
       player.blam

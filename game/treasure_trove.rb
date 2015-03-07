@@ -1,4 +1,5 @@
-Treasure = Struct.new(:name, :points)
+#Changed points to point so to differentiate from points method
+Treasure = Struct.new(:name, :point)
 
 module TreasureTrove
   TREASURES = [
@@ -13,7 +14,7 @@ module TreasureTrove
       TREASURES.sample
    end
   end
-  
+
 # treasures = TreasureTrove::TREASURES
 # # treasures.random.each do |treasure|
 # #   puts treasure

@@ -11,7 +11,7 @@ class Game
     @players = []
   end 
   
-  def play(rounds)
+  def play( rounds )
     puts "There are #{@players.size} players in #{@title}:"
     #total_points
     @players.each do |player|
@@ -21,7 +21,7 @@ class Game
     treasures = TreasureTrove::TREASURES
     puts "\nthere are #{treasures.size} treaures to be found:"
     treasures.each do |treasure|
-      puts "A #{treasure.name} worth #{treasure.points} points"
+      puts "A #{treasure.name} worth #{treasure.point} points"
     end
      # a = TreasureTrove.random
      # a.each do |b|
@@ -41,8 +41,8 @@ class Game
         
         #This takes 'player and then passes it to the module method 'take_turn' so these block (what are they called) can be               passed around to different classes and modules.
         
-        GameTurn.take_turn(player)
-        GameTurn.assign_treasure(player)
+        GameTurn.take_turn( player )
+        GameTurn.assign_treasure( player )
         
       end
       puts "\n"
@@ -81,7 +81,7 @@ class Game
      @players.each do |player|
        puts "\n#{player.name}'s point totals:"
        player.each_found_treasure  do |treasure|
-         puts "#{treasure.points} total #{treasure.name} points"
+         puts "#{treasure.point} total #{treasure.name} points"
        end
        puts "#{player.points} grand total points"
      end
