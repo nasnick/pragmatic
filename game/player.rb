@@ -16,6 +16,10 @@ class Player
     "I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
   end
   
+  def name=(new_name)
+    @name = new_name.capitalize
+  end
+  
   def <=>(other_player)
      #puts "here's #{other_player.name}'s #{other_player.score}"
      #puts score
@@ -29,20 +33,6 @@ class Player
     puts "#{@name}'s Treasures: #{@found_treasure}"
   end
   
-  def strong?
-    (health + points) >= 500 ? true : false
-  end
-  
-  def name=(new_name)
-    @name = new_name.capitalize
-  end
-  
-  def points
-    #what does the '0' do here?
-    #This is per player. To sum all points from treasures found. Method in Game class sums them up for each round.
-    @found_treasure.values.reduce(0,:+)
-  end
-  
   def each_found_treasure
     #Accesses the keys and values of the @found_treasure hash.
     @found_treasure.each do |name, point|
@@ -50,8 +40,17 @@ class Player
       # treasure = Treasure.new(name, point)
       #yield treasure
       yield Treasure.new(name, point)
-    
     end
+  end
+  
+  def strong?
+    (health + points) >= 500 ? true : false
+  end
+  
+  def points
+    #what does the '0' do here?
+    #This is per player. To sum all points from treasures found. Method in Game class sums them up for each round.
+    @found_treasure.values.reduce(0,:+)
   end
   
   def score

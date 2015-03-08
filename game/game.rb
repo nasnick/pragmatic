@@ -37,13 +37,10 @@ class Game
         break if yield 
       end
       @players.each do |player|
-        #if I add 'player.name = "rogeyboy"'here it shows that it's possible to change the value of an instance variables (@name)          via the symbol :name in the player class via attr_accessor but if this is defined in attr_reader an error is thrown.
-        
-        #This takes 'player and then passes it to the module method 'take_turn' so these block (what are they called) can be               passed around to different classes and modules.
-        
+#if I add 'player.name = "rogeyboy"'here it shows that it's possible to change the value of an instance variables           (@name)via the symbol :name in the player class via attr_accessor but if this is defined in attr_reader an error is         thrown.
+#This takes 'player and then passes it to the module method 'take_turn' so these block (what are they called) can           be passed around to different classes and modules.
         GameTurn.take_turn( player )
-        GameTurn.assign_treasure( player )
-        
+        GameTurn.assign_treasure( player ) 
       end
       puts "\n"
       #print_stats << a call to print_stats here works but is now defined in studio_game
