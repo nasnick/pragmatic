@@ -19,6 +19,15 @@ class Game
     end
   end
   
+  def save_high_scores(save_file='high_scores.txt')
+      open(save_file, 'w') do |line|
+      line.puts "Knuckleheads High Scores:"
+      @players.sort.each do |player|
+        line.puts "#{player.name.ljust(20, '.')} #{player.score}"
+        end
+    end
+  end
+  
   def play( rounds )
     puts "There are #{@players.size} players in #{@title}:"
     #total_points
