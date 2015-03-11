@@ -20,6 +20,12 @@ class Player
     @name = new_name.capitalize
   end
   
+  def self.from_csv( line )
+    #can create player object in game class but here to create an object of type player, this must be done in the player       class.
+    name, health = line.split(',')
+    player = Player.new(name, Integer(health))
+  end
+  
   def <=>(other_player)
      #puts "here's #{other_player.name}'s #{other_player.score}"
      #puts score

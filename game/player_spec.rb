@@ -115,6 +115,15 @@ context "in a collection of players" do
       Treasure.new(:bottle, 25)
    ]
   end
+  
+  it "should create a player object when supplied with a string and health value" do 
+    # player = Player.from_csv("larry,150")
+    # player.name.should == "Larry"
+    # player.health.should == 150
+    string = "Roger,30"
+    Player.from_csv(string).name.should == 'Roger'
+    Player.from_csv(string).health.should == 30
+  end
  end
 end
 
@@ -124,6 +133,5 @@ end
 # So if - 10 is commented out then throws the following error:
 # expected: 150
 #      got: 140 (using ==)
-     
 
-
+#Just to test out the from_csv method: player = Player.new(name, Integer(10 + health.to_i)) and the test failed by 10. Not sure why I had to use .to_i

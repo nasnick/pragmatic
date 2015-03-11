@@ -1,5 +1,6 @@
 require_relative 'player'
 require_relative 'game_turn'
+require 'csv'
 
 #Game class inherits from player class.
 
@@ -10,20 +11,27 @@ class Game
     @title = title
     @players = []
   end 
-  
+    
   def load_players(from_file)
-    File.readlines(from_file).each do |line|
+    #File.readlines(from_file).each do |line|
+    CSV.foreach(from_file) do |line|
       name, health = line.split(',')
-      player = Player.new(name, Integer(health))
+      #player = Player.from_csv( line )
+      player = Player.new(name, health)
       add_player(player)
+      #add_player(Player.from_csv(line))
     end
+  end
+  
+  def high_score_entry( player )
+    "#{player.name.ljust(20, '.')} #{player.score}"
   end
   
   def save_high_scores(save_file='high_scores.txt')
       open(save_file, 'w') do |line|
       line.puts "Knuckleheads High Scores:"
       @players.sort.each do |player|
-        line.puts "#{player.name.ljust(20, '.')} #{player.score}"
+        line.puts high_score_entry( player )
         end
     end
   end
@@ -89,7 +97,8 @@ class Game
    puts "\n"
    puts "#{@title} High Scores:"
    @players.sort.each do |player|
-     puts "#{player.name.ljust(20, '.')} #{player.score}"
+     puts high_score_entry( player )
+     #puts "#{player.name.ljust(20, '.')} #{player.score}"
      end
      
      @players.each do |player|
