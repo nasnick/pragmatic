@@ -14,11 +14,12 @@ class Game
     
   def load_players(from_file)
     #File.readlines(from_file).each do |line|
-    CSV.foreach(from_file) do |line|
-      name, health = line.split(',')
+    CSV.foreach(from_file) do |row|
+      name, health = row
       #player = Player.from_csv( line )
-      player = Player.new(name, health)
-      add_player(player)
+      add_player(Player.new(name, Integer(health)))
+
+      #add_player(player)
       #add_player(Player.from_csv(line))
     end
   end
