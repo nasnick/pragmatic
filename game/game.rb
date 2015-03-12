@@ -16,11 +16,8 @@ class Game
     #File.readlines(from_file).each do |line|
     CSV.foreach(from_file) do |row|
       name, health = row
-      #player = Player.from_csv( line )
       add_player(Player.new(name, Integer(health)))
-
-      #add_player(player)
-      #add_player(Player.from_csv(line))
+      #or player = Player.new(row[0], row[1].to_i)
     end
   end
   
