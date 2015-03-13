@@ -113,3 +113,4 @@ class Game
     @players << a_player
   end
  end
+ "hi"
