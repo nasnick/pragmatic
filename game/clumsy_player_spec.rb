@@ -2,7 +2,7 @@ require_relative 'clumsy_player'
 
 describe ClumsyPlayer do
   before do
-    @player = ClumsyPlayer.new("klutz")
+    @player = ClumsyPlayer.new("klutz", 20)
   end
   
   it "only gets half the point value for each treasure" do

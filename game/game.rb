@@ -1,5 +1,8 @@
 require_relative 'player'
 require_relative 'game_turn'
+require_relative 'clumsy_player'
+require_relative 'berserk_player'
+
 require 'csv'
 
 #Game class inherits from player class.
@@ -101,7 +104,7 @@ class Game
      
      @players.each do |player|
        puts "\n#{player.name}'s point totals:"
-       player.each_found_treasure  do |treasure|
+       player.each_found_treasure do |treasure|
          puts "#{treasure.point} total #{treasure.name} points"
        end
        puts "#{player.points} grand total points"

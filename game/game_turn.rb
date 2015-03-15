@@ -13,7 +13,7 @@ module GameTurn
     #Player object comes from block iterating through player array.
     #This assigns a treasure from TreasureTrove class.
     treasure = TreasureTrove.random
-    #found_treasure adds the treasure to the hash.
+    #found_treasure adds the treasure to the hash and adds the points of each treasure up.
     player.found_treasure( treasure )
     puts "#{player.name} found a #{treasure.name} worth #{treasure.point} points"
     puts player
