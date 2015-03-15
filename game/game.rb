@@ -1,7 +1,5 @@
 require_relative 'player'
 require_relative 'game_turn'
-require_relative 'clumsy_player'
-require_relative 'berserk_player'
 
 require 'csv'
 

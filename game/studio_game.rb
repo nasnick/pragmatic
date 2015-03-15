@@ -7,7 +7,7 @@ require_relative 'berserk_player'
 # player3 = Player.new("curly", 125)
 # player4 = Player.new("shemp", 90)
 
-player5 = ClumsyPlayer.new('klutz', 105)
+player5 = ClumsyPlayer.new('klutz', 105, 3)
 player6 = BerserkPlayer.new('pyscho', 30)
 #
 # #knuckleheads represents a new game - player objects are called above and are created in/ are objects of the player class. The add_player method in the game class then adds them to an array and the play method gets the game rollin.

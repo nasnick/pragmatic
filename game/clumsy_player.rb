@@ -1,6 +1,10 @@
 require_relative 'player'
 
 class ClumsyPlayer < Player
+  def initialize(name, health=100, boost=1)
+    super(name, health)
+    @boost = boost
+  end
 
   def found_treasure( treasure )
     #This is taking in the treasure created in 'game_turn' module
@@ -10,9 +14,18 @@ class ClumsyPlayer < Player
     treasure = Treasure.new(treasure.name, treasure.point / 2.0)
     super(treasure)
     
+    def w00t
+      @boost.times { super }
+      super
+    end
   end
 end
 
+# if __FILE__ == $0
+#   clumsy = ClumsyPlayer.new('clod', 40)
+#   5.times { clumsy.w00t }
+#   puts clumsy.health
+# end
 
 
 # if __FILE__ == $0
