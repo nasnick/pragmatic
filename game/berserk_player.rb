@@ -19,23 +19,23 @@ class BerserkPlayer < Player
     end
     
     def blam
-      super
-      unless berserk? == false then
-        #berserk? ? w00t : super
-         puts "Berserker was BLAMMED but he is berserk so will be w00ted"
-         w00t
-      end
+         berserk? ? w00t : super
     end
   end
 end
 
 
+# if __FILE__ == $0
+#   berserker = BerserkPlayer.new("berserker", 50)
+#   6.times { berserker.w00t }
+# end
+
 if __FILE__ == $0
   berserker = BerserkPlayer.new("berserker", 50)
   6.times { berserker.w00t }
+  2.times { berserker.blam }
+  puts berserker.health
 end
-
-
 
 
 # Roger = BerserkPlayer.new("roger", 20)
