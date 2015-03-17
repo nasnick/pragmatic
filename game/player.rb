@@ -1,6 +1,8 @@
 require_relative 'treasure_trove'
+require_relative 'playable'
 
 class Player
+include Playable 
   attr_reader :health
   attr_accessor :name
   
@@ -49,10 +51,6 @@ class Player
     end
   end
   
-  def strong?
-    (health + points) >= 500 ? true : false
-  end
-  
   def points
     #what does the '0' do here?
     #This is per player. To sum all points from treasures found. Method in Game class sums them up for each round.
@@ -62,16 +60,6 @@ class Player
   def score
     #points is what's returned from the points method.
       @health + points
-  end
-
-  def blam
-    @health -= 10
-    puts "#{@name} got blammed!"
-  end
-
-  def w00t
-    @health += 15
-    puts "#{@name} got w00ted!"
   end
 end
 
