@@ -3,7 +3,7 @@ require_relative 'playable'
 
 class Player
 include Playable 
-  attr_reader :health
+  attr_accessor :health
   attr_accessor :name
   
   def initialize(name, health=100)

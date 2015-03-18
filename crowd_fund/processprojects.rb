@@ -45,13 +45,13 @@ end
     ##NOT NEEDED## call to project_worthiness method to filter out charties below 250
     #@projects.each {|p| project_worthiness(p) }
   end
-  
-  def total_points_for_game
-    @projects.reduce(0) {|sum, total| sum += total.points}
-  end
    
   def print_summary_results( project )
     puts "#{project.name} with (#{project.initial_amount})"
+  end
+  
+  def total_points_for_game
+    @projects.reduce(0) {|sum, total| sum += total.points}
   end
   
   def summary

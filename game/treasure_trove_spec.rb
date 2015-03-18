@@ -11,7 +11,7 @@ describe Treasure do
   end
   
   it "has a points attribute" do
-    @treasure.points.should == 50
+    @treasure.point.should == 50
   end
   
   it "returns a random treasure" do

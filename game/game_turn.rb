@@ -1,10 +1,10 @@
-require_relative 'loaded_die'
+require_relative 'die'
 
 
 module GameTurn
 
   def self.number_rolled
-    die = LoadedDie.new
+    die = Die.new
     number_rolled = die.roll
   end
   

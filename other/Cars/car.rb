@@ -25,9 +25,11 @@ class CarLife
   end
   
   def sell_cars
+    time = Time.now
+    #time = -> { Time.now }
     old_car, new_car = @cars.partition {|old_car| old_car.old? }
     old_car.each do |car|
-      puts "The #{car.type} is being sold because its has a conditon of #{car.condition}"
+      puts "The #{car.type} is being sold because its has a conditon of #{car.condition} as of #{time}"
       @cars.delete(car)
     end
     puts @cars.size
