@@ -1,17 +1,19 @@
-module Playable
+module StudioGame
+  module Playable
   
-  def blam
-    health -= 10
-    puts "#{name} got blammed!"
-  end
+    def blam
+      self.health -= 10
+      puts "#{name} got blammed!"
+    end
 
-  def w00t
-    health += 15
-    puts "#{name} got w00ted!"
-  end
+    def w00t
+      self.health += 15
+      puts "#{name} got w00ted!"
+    end
   
-  def strong?
-    (health + points) >= 500 ? true : false
+    def strong?
+      (health + points) >= 500 ? true : false
+    end
   end
 end
 

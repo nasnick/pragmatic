@@ -1,22 +1,25 @@
 require_relative 'player'
 
-class ClumsyPlayer < Player
-  def initialize(name, health=100, boost=1)
-    super(name, health)
-    @boost = boost
-  end
+module StudioGame
+  class ClumsyPlayer < Player
+    def initialize(name, health=100, boost=1)
+      #Boost calls w00t twice 0 and 1
+      super(name, health)
+      @boost = boost
+    end
 
-  def found_treasure( treasure )
-    #This is taking in the treasure created in 'game_turn' module
-    # treasure_points = treasure.point / 2
-    # @found_treasure[treasure.name] += treasure_points
-    # puts "#{@name}'s Treasures: #{@found_treasure}"
-    treasure = Treasure.new(treasure.name, treasure.point / 2.0)
-    super(treasure)
+    def found_treasure( treasure )
+      #This is taking in the treasure created in 'game_turn' module
+      # treasure_points = treasure.point / 2
+      # @found_treasure[treasure.name] += treasure_points
+      # puts "#{@name}'s Treasures: #{@found_treasure}"
+      treasure = Treasure.new(treasure.name, treasure.point / 2.0)
+      super(treasure)
     
-    def w00t
-      @boost.times { super }
-      super
+      def w00t
+        @boost.times { super }
+        super
+      end
     end
   end
 end

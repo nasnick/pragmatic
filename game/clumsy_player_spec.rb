@@ -28,7 +28,8 @@ describe ClumsyPlayer do
     yielded.should == [Treasure.new(:hammer, 75), Treasure.new(:crowbar, 200)]    
   end
   it "health increases by 10 points more if player is w00ted" do
+    @player = ClumsyPlayer.new("roger", 20)
     @player.w00t
-    @player.health.should == 45
+    @player.health.should == 50
   end
 end
