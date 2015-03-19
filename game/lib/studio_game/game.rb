@@ -1,4 +1,5 @@
 require_relative 'player'
+
 #Game class inherits from player class.
 require_relative 'game_turn'
 require 'csv'
